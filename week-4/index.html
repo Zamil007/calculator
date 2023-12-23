@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        /* Gradient background */
+        background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+        height: 100vh;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        text-align: center;
+      }
+
+      input {
+        /* Transparent background with white text */
+        background-color: rgba(255, 255, 255, 0.3);
+        color: white;
+        border: none;
+        padding: 10px;
+        margin: 10px 0;
+        width: 200px;
+      }
+      #finalSum {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust as needed */
+      }
+      button {
+        /* Gradient background with white text */
+        background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        transition: background 0.5s;
+      }
+
+      button:hover {
+        /* Change gradient direction on hover */
+        background: linear-gradient(to left, #1a2a6c, #b21f1f, #fdbb2d);
+      }
+    </style>
+    <script>
+      function populateDiv() {
+        const a = document.getElementById("firstNumber").value;
+        const b = document.getElementById("secondNumber").value;
+        const element = document.getElementById("finalSum");
+        element.innerHTML = parseInt(a) + parseInt(b);
+        // string => number
+        // "1111" => 1111
+      }
+    </script>
+  </head>
+  <body>
+    <input id="firstNumber" type="text" placeholder="First number" /><br />
+    <input id="secondNumber" type="text" placeholder="Second number" /><br />
+    <button onclick="populateDiv()">Calculate</button> <br />
+    <div id="finalSum"></div>
+  </body>
+</html>
